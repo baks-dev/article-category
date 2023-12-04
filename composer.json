@@ -1,0 +1,41 @@
+{
+  "name": "baks-dev/article-category",
+  "description": "Модуль категорий статей",
+  "homepage": "https://github.com/baks-dev/article-category",
+  "keywords": [
+    "symfony",
+    "bundle",
+    "library",
+    "module",
+    "plugin",
+    "article",
+    "post",
+    "category",
+    "baksdev"
+  ],
+  "license": "MIT",
+  "type": "symfony-bundle",
+  "authors": [
+    {
+      "name": "Baks Development",
+      "email": "admin@baks.dev"
+    }
+  ],
+  "require": {
+    "php": ">=8.2"
+  },
+  "require-dev": {
+    "roave/security-advisories": "dev-latest"
+  },
+  "autoload": {
+    "psr-4": {
+      "BaksDev\\Article\\Category\\": ""
+    }
+  },
+  "config": {
+    "sort-packages": true,
+    "allow-plugins": {
+      "symfony/flex": true
+    }
+  }
+}

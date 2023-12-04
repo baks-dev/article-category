@@ -1,0 +1,19 @@
+ROLE_ARTICLE_POST:
+  name: 'Products'
+  desc: 'Product List'
+
+ROLE_ARTICLE_POST_INDEX:
+  name: 'View'
+  desc: ''
+
+ROLE_ARTICLE_POST_NEW:
+  name: 'Add'
+  desc: ''
+
+ROLE_ARTICLE_POST_EDIT:
+  name: 'Edit'
+  desc: ''
+
+ROLE_ARTICLE_POST_DELETE:
+  name: 'Delete'
+  desc: ''

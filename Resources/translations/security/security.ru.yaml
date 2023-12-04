@@ -1,0 +1,23 @@
+
+# Роль
+ROLE_ARTICLE_POST:
+  name: 'Публикации'
+  desc: 'Список публикаций'
+
+# Правила
+ROLE_ARTICLE_POST_INDEX:
+  name: 'Просмотр'
+  desc: ''
+
+ROLE_ARTICLE_POST_NEW:
+  name: 'Добавить'
+  desc: ''
+
+ROLE_ARTICLE_POST_EDIT:
+  name: 'Редактировать'
+  desc: ''
+
+ROLE_ARTICLE_POST_DELETE:
+  name: 'Удалить'
+  desc: ''
+
