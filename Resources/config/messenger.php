@@ -33,7 +33,7 @@ return static function (FrameworkConfig $framework) {
         ->transport('article-category')
         ->dsn('%env(MESSENGER_TRANSPORT_DSN)%')
         ->options(['queue_name' => 'article-category'])
-        ->failureTransport('failed-orders-order')
+        ->failureTransport('failed-article-category')
         ->retryStrategy()
         ->maxRetries(3)
         ->delay(1000)
