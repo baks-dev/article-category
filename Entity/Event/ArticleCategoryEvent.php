@@ -65,21 +65,12 @@ class ArticleCategoryEvent extends EntityState
     #[ORM\Column(type: ArticleCategoryUid::TYPE, nullable: false)]
     private ?ArticleCategoryUid $main = null;
 
-    /** One To One */
-    //#[ORM\OneToOne(mappedBy: 'event', targetEntity: ArticleCategoryLogo::class, cascade: ['all'])]
-    //private ?ArticleCategoryOne $one = null;
-
     /**
      * Модификатор
      */
-    #[ORM\OneToOne(mappedBy: 'event', targetEntity: ArticleCategoryModify::class, cascade: ['all'])]
+    #[ORM\OneToOne(targetEntity: ArticleCategoryModify::class, mappedBy: 'event', cascade: ['all'])]
     private ArticleCategoryModify $modify;
 
-    /**
-     * Переводы
-     */
-    //#[ORM\OneToMany(mappedBy: 'event', targetEntity: ArticleCategoryTrans::class, cascade: ['all'])]
-    //private Collection $translate;
 
 
     public function __construct()
