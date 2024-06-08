@@ -1,6 +1,6 @@
 <?php
 /*
- *  Copyright 2023.  Baks.dev <admin@baks.dev>
+ *  Copyright 2024.  Baks.dev <admin@baks.dev>
  *  
  *  Permission is hereby granted, free of charge, to any person obtaining a copy
  *  of this software and associated documentation files (the "Software"), to deal
@@ -23,26 +23,18 @@
 
 namespace Symfony\Component\DependencyInjection\Loader\Configurator;
 
-use BaksDev\Article\Post\Type\Event\ArticlePostEventType;
-use BaksDev\Article\Post\Type\Event\ArticlePostEventUid;
-use BaksDev\Article\Post\Type\Id\ArticlePostType;
-use BaksDev\Article\Post\Type\Id\ArticlePostUid;
-use Symfony\Config\DoctrineConfig;
+use BaksDev\Article\Category\BaksDevArticleCategoryBundle;
+use Symfony\Config\TwigConfig;
 
-return static function(ContainerConfigurator $container, DoctrineConfig $doctrine) {
+return static function(TwigConfig $twig) {
 
-//    $doctrine->dbal()->type(ArticlePostUid::TYPE)->class(ArticlePostType::class);
-//    $doctrine->dbal()->type(ArticlePostEventUid::TYPE)->class(ArticlePostEventType::class);
+    $twig->path(
+        BaksDevArticleCategoryBundle::PATH.'Resources/view',
+        'article-category'
+    );
 
-
-    $emDefault = $doctrine->orm()->entityManager('default')->autoMapping(true);
-
-    $MODULE = substr(__DIR__, 0, strpos(__DIR__, "Resources"));
-
-    $emDefault->mapping('article-category')
-        ->type('attribute')
-        ->dir($MODULE.'Entity')
-        ->isBundle(false)
-        ->prefix('BaksDev\Article\Category')
-        ->alias('article-category');
 };
+
+
+
+
