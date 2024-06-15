@@ -25,7 +25,6 @@ declare(strict_types=1);
 
 namespace BaksDev\Article\Category\Controller\Admin;
 
-
 use BaksDev\Core\Form\Search\SearchDTO;
 use BaksDev\Core\Form\Search\SearchForm;
 use Symfony\Component\HttpFoundation\Request;
@@ -44,14 +43,15 @@ final class IndexController extends AbstractController
         Request $request,
         //AllArticleCategoryInterface $allArticleCategory,
         int $page = 0,
-    ): Response
-    {
+    ): Response {
 
         dd('/admin/article/categorys/{page<\d+>}');
 
         // Поиск
         $search = new SearchDTO();
-        $searchForm = $this->createForm(SearchForm::class, $search,
+        $searchForm = $this->createForm(
+            SearchForm::class,
+            $search,
             ['action' => $this->generateUrl('article-category:admin.index')]
         );
         $searchForm->handleRequest($request);

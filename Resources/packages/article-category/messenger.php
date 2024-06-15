@@ -31,8 +31,8 @@ return static function (FrameworkConfig $framework) {
 
     $messenger
         ->transport('article-category')
-        ->dsn('%env(MESSENGER_TRANSPORT_DSN)%')
-        ->options(['queue_name' => 'article-category'])
+        ->dsn('redis://%env(REDIS_PASSWORD)%@%env(REDIS_HOST)%:%env(REDIS_PORT)%?auto_setup=true')
+        ->options(['stream' => 'article-category'])
         ->failureTransport('failed-article-category')
         ->retryStrategy()
         ->maxRetries(3)
@@ -43,7 +43,9 @@ return static function (FrameworkConfig $framework) {
 
     ;
 
-    $messenger->transport('failed-article-category')
+    $failure = $framework->messenger();
+
+    $failure->transport('failed-article-category')
         ->dsn('%env(MESSENGER_TRANSPORT_DSN)%')
         ->options(['queue_name' => 'failed-article-category'])
     ;
