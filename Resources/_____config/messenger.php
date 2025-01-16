@@ -31,7 +31,7 @@ return static function (FrameworkConfig $framework) {
 
     $messenger
         ->transport('article-category')
-        ->dsn('redis://%env(REDIS_PASSWORD)%@%env(REDIS_HOST)%:%env(REDIS_PORT)%?dbindex=%env(REDIS_TABLE)&auto_setup=true')
+        ->dsn('redis://%env(REDIS_PASSWORD)%@%env(REDIS_HOST)%:%env(REDIS_PORT)%?dbindex=%env(REDIS_TABLE)%&auto_setup=true')
         ->options(['stream' => 'article-category'])
         ->failureTransport('failed-article-category')
         ->retryStrategy()
