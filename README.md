@@ -1,7 +1,7 @@
 # BaksDev Article Category
 
 [![Version](https://img.shields.io/badge/version-7.2.0-blue)](https://github.com/baks-dev/article-category/releases)
-![php 8.3+](https://img.shields.io/badge/php-min%208.3-red.svg)
+![php 8.4+](https://img.shields.io/badge/php-min%208.4-red.svg)
 
 Модуль категорий статей
 
