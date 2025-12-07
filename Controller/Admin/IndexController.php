@@ -45,8 +45,7 @@ final class IndexController extends AbstractController
         int $page = 0,
     ): Response
     {
-
-        dd('/admin/article/categorys/{page<\d+>}');
+        return new Response('/admin/article/categorys/{page<\d+>}');
 
         // Поиск
         $search = new SearchDTO();
